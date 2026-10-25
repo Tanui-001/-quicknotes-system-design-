@@ -1,0 +1,150 @@
+:root {
+  --bg: #f7f9fc;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --success-bg: #ecfdf5;
+  --success-text: #065f46;
+  --error-bg: #fef2f2;
+  --error-text: #991b1b;
+  --loading-bg: #eff6ff;
+  --loading-text: #1e40af;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+header {
+  background: var(--primary);
+  color: #fff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+header h1 { margin: 0; font-size: 1.75rem; }
+.subtitle { margin: 0.25rem 0 0; opacity: 0.9; }
+
+main {
+  max-width: 720px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.controls { margin-bottom: 1rem; }
+
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+button:hover:not(:disabled) { background: var(--primary-dark); }
+button:disabled { opacity: 0.55; cursor: not-allowed; }
+
+#status {
+  min-height: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+#status.loading { background: var(--loading-bg); color: var(--loading-text); }
+#status.success { background: var(--success-bg); color: var(--success-text); }
+#status.error   { background: var(--error-bg);   color: var(--error-text); }
+#status:empty   { padding: 0; }
+
+.create-note, .notes {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.create-note h2, .notes h2 { margin-top: 0; font-size: 1.15rem; }
+
+.field { margin-bottom: 0.75rem; }
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font: inherit;
+  resize: vertical;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+
+#notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.note {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  background: #fafbff;
+}
+
+.note h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.note p {
+  margin: 0 0 0.6rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.note button {
+  background: #dc2626;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.note button:hover:not(:disabled) { background: #b91c1c; }
+
+.empty {
+  color: var(--muted);
+  font-style: italic;
+  padding: 0.5rem 0;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding: 1rem;
+}
